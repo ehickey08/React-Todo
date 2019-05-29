@@ -4,18 +4,7 @@ import TodoForm  from './components/TodoComponents/TodoForm';
 
 class App extends React.Component {
     state = {
-        items: [
-            {
-              task: 'Organize Garage',
-              id: 1528817077286,
-              completed: false
-            },
-            {
-              task: 'Bake Cookies',
-              id: 1528817084358,
-              completed: false
-            }
-          ],
+        items: [],
         task: '',
         error: null
     }
@@ -23,6 +12,7 @@ class App extends React.Component {
     addItem = event => {
         event.preventDefault();
         if(this.state.task === ''){
+            console.log('test');
             return this.setState({
                 error: 'You must enter a task!'
             })
@@ -54,12 +44,20 @@ class App extends React.Component {
         }))
     }
 
+    removeItem = event => {
+        event.preventDefault();
+        const completedItems = this.state.items.filter(item => item.completed === false)
+        this.setState({
+            items: [...completedItems]
+        })
+    }
+
     render() {
         return (
             <div className = 'app-container'>
                 <h2>Welcome to your Todo App!</h2>
                 <TodoList person = {this.state.items} complete = {this.completeTask}/>
-                <TodoForm addFunc = {this.addItem} handler = {this.handleChanges} setValue = {this.state.task} error = {this.state.error}/>
+                <TodoForm addFunc = {this.addItem} removeFunc = {this.removeItem} handler = {this.handleChanges} setValue = {this.state.task} error = {this.state.error}/>
         </div>
     );
   }

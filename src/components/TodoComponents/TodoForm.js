@@ -8,7 +8,7 @@ const TodoFrom = props => {
         <form onSubmit = {props.addFunc}>
             <Input handler = {props.handler} setValue = {props.setValue} error = {props.error}/>
             <AddButton addFunc = {props.addFunc} />
-            <ClearButton />
+            <ClearButton removeFunc = {props.removeFunc}/>
         </form>
     );
 }
