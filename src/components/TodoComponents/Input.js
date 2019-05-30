@@ -2,7 +2,13 @@ import React from 'react';
 
 const Input = props => {
     return (
-            <input placeholder ="...todo" value = {props.setValue} onChange = {props.handler} required = 'Fill this out' />    
+        <input 
+            placeholder = {props.placeholder}
+            value = {props.setValue} 
+            onChange = {props.handler} 
+            required = {props.required}
+            name = {props.name}
+        />    
     ); 
 }
 

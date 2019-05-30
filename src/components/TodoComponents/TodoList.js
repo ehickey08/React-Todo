@@ -3,8 +3,8 @@ import Todo from './Todo';
 
 const TodoList = (props) => {
     return (
-        props.person.map(item => {
-            return <Todo item = {item} complete = {props.complete} />
+        props.items.map(item => {
+            return <Todo className = "todo-item" item = {item} complete = {props.complete} />
         })
     );
 }
