@@ -1,0 +1,52 @@
+html{
+    background: rgba(157,118,130,0.4)
+}
+
+.app-container{
+    width: 750px;
+    margin: 100px auto;
+    background: white;
+
+    h2{
+        font-size: 36px;
+        text-align: center;
+        margin-top: 10px
+    }
+}
+
+.todo-checkbox{
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2.5px;
+    margin: 5px;
+
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+    button{
+        background:#AF0035;
+        color: white;
+        border-radius: 5px;
+        width: 150px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+
+.unmatched{
+    display: none
+}
